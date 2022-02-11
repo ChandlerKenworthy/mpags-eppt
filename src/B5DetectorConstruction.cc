@@ -376,8 +376,7 @@ void B5DetectorConstruction::ConstructMaterials()
   nistManager->FindOrBuildMaterial("G4_AIR");
   // Argon gas
   nistManager->FindOrBuildMaterial("G4_Ar");
-  // Scintillator
-  // (PolyVinylToluene, C_9H_10)
+  // Scintillator (PolyVinylToluene, C_9H_10)
   nistManager->FindOrBuildMaterial("G4_PLASTIC_SC_VINYLTOLUENE");
   // CsI
   nistManager->FindOrBuildMaterial("G4_CESIUM_IODIDE");
@@ -385,7 +384,7 @@ void B5DetectorConstruction::ConstructMaterials()
   nistManager->FindOrBuildMaterial("G4_Pb");
   
   // Vacuum "Galactic"
-  // nistManager->FindOrBuildMaterial("G4_Galactic");
+  nistManager->FindOrBuildMaterial("G4_Galactic");
 
   // Vacuum "Air with low density"
   // auto air = G4Material::GetMaterial("G4_AIR");
