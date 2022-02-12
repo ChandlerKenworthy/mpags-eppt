@@ -220,14 +220,14 @@ G4VPhysicalVolume* B5DetectorConstruction::Construct()
                     false,0,checkOverlaps);
   
   // CsI calorimeter
-  auto emCalorimeterSolid = new G4Box("EMcalorimeterBox",1.5*m,30.*cm,15.*cm);
+  auto emCalorimeterSolid = new G4Box("EMcalorimeterBox",1.5*m,30.*cm,28.*cm);
   auto emCalorimeterLogical = new G4LogicalVolume(emCalorimeterSolid,csI,"EMcalorimeterLogical");
   new G4PVPlacement(0,G4ThreeVector(0.,0.,2.*m),emCalorimeterLogical,
                     "EMcalorimeterPhysical",secondArmLogical,
                     false,0,checkOverlaps);
   
   // EMcalorimeter cells
-  auto cellSolid  = new G4Box("cellBox",7.5*cm,7.5*cm,15.*cm);
+  auto cellSolid  = new G4Box("cellBox",7.5*cm,7.5*cm,28.*cm);
   fCellLogical = new G4LogicalVolume(cellSolid,csI,"cellLogical");
   G4VPVParameterisation* cellParam = new B5CellParameterisation();
   new G4PVParameterised("cellPhysical",fCellLogical,emCalorimeterLogical,
@@ -309,14 +309,17 @@ G4VPhysicalVolume* B5DetectorConstruction::Construct()
   fVisAttributes.push_back(visAttributes);
   
   visAttributes = new G4VisAttributes(G4Colour(0.0, 0.0, 0.9));
+  visAttributes->SetVisibility(false);
   hadCalorimeterLogical->SetVisAttributes(visAttributes);
+  fVisAttributes.push_back(visAttributes);
+
+  visAttributes = new G4VisAttributes(G4Colour(0.0, 0.0, 0.9));
+  HadCalCellLogical->SetVisAttributes(visAttributes);
   fVisAttributes.push_back(visAttributes);
   
   visAttributes = new G4VisAttributes(G4Colour(0.0, 0.0, 0.9));
   visAttributes->SetVisibility(false);
   HadCalColumnLogical->SetVisAttributes(visAttributes);
-  HadCalCellLogical->SetVisAttributes(visAttributes);
-  HadCalLayerLogical->SetVisAttributes(visAttributes);
   fHadCalScintiLogical->SetVisAttributes(visAttributes);
   fVisAttributes.push_back(visAttributes);
   
