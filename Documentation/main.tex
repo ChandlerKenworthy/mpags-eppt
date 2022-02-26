@@ -393,7 +393,7 @@ Back-of-the-envelope calculation of the momentum resolution of the spectrometer.
 
 For high-energy particles
 \begin{equation}
-  p_T =\frac{0.3BL}{\sin\left(\frac{\Delta\theta}{2}\right)}\approx 2\frac{0.3BL}{\Delta\theta}
+  p_T =\frac{0.3BL}{2\sin\left(\frac{\Delta\theta}{2}\right)}\approx \frac{0.3BL}{\Delta\theta}
 \end{equation}
 where $p_T$ is the momentum on the transverse plane to the magnetic
 field in ${\rm GeV}$, $B$ the magnetic field strength in ${\rm T}$,
@@ -404,7 +404,7 @@ between the exit and entry of the magnetic field region.
 Assuming the magnetic field strength and the path length are precisely known,
 the momentum uncertainty due to the measurement of $\Delta\theta$ is:
 \begin{equation}
-  \sigma_{p_T} = 2\frac{0.3BL}{\left(\Delta\theta\right)^2}\sigma_{\Delta\theta} =
+  \sigma_{p_T} = \frac{0.3BL}{\left(\Delta\theta\right)^2}\sigma_{\Delta\theta} =
     \frac{p_T}{\Delta\theta}\sigma_{\Delta\theta}
 \end{equation}
 
@@ -454,11 +454,11 @@ Thus,
 
 For $p_T=100\;{\rm GeV}$, $B=1\;{\rm T}$, $L=2\;{\rm m}$, $D=2\;{\rm m}$, $\sigma_y=100\;{\rm \mu m}$:
 \begin{equation}
-  \Delta\theta = 2\frac{0.3BL}{p_T}=1.2\cdot 10^{-2}
+  \Delta\theta = \frac{0.3BL}{p_T}=6\cdot 10^{-3}
 \end{equation}
 and
 \begin{equation}
-  \left.\frac{\sigma_{p_T}}{p_T}\right|_{\rm Ang}= \frac{2\sigma_y}{D\Delta\theta}=0.83\%
+  \left.\frac{\sigma_{p_T}}{p_T}\right|_{\rm Ang}= \frac{2\sigma_y}{D\Delta\theta}=1.67\%
 \end{equation}
 
 \subsection{Multiple scattering}
@@ -491,7 +491,7 @@ Given that for our example $d=2\;{\rm cm}$ and $\ell=6.5\;{\rm m}$,
 Thus
 \begin{equation}
   \left.\frac{\sigma_{p_T}}{p_T}\right|_{\rm MS}= \frac{\sqrt{2}\theta^{\rm Ar}_0\oplus \theta^{\rm Air}_0}{\Delta\theta}\approx
-  \frac{\theta^{\rm Air}_0}{\Delta\theta}= 0.14\%
+  \frac{\theta^{\rm Air}_0}{\Delta\theta}= 0.28\%
 \end{equation}
 
 \section{Discussion on Calorimetry}
