@@ -137,6 +137,8 @@ G4VPhysicalVolume* B5DetectorConstruction::Construct()
   // new G4PVPlacement(fieldRot,G4ThreeVector(),fMagneticLogical,
   //                   "magneticPhysical",worldLogical,
   //                   false,0,checkOverlaps);
+  //G4RotationMatrix* fieldRot = new G4RotationMatrix();
+ // fieldRot->rotateY(45.*deg);
   new G4PVPlacement(0,G4ThreeVector(),fMagneticLogical,
                     "magneticPhysical",worldLogical,
                     false,0,checkOverlaps);
@@ -338,7 +340,7 @@ void B5DetectorConstruction::ConstructSDandField()
   
   auto hodoscope1 = new B5HodoscopeSD(SDname="/hodoscope1");
   sdManager->AddNewDetector(hodoscope1);
-  fHodoscope1Logical->SetSensitiveDetector(hodoscope1);
+  fHodoscope1Logical->SetSensitiveDefMagneticFieldtector(hodoscope1);
 
   auto hodoscope2 = new B5HodoscopeSD(SDname="/hodoscope2");
   sdManager->AddNewDetector(hodoscope2);

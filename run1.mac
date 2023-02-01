@@ -30,7 +30,8 @@
 /B5/field/value 1. tesla
 /B5/generator/momentum 2. GeV
 /B5/generator/sigmaMomentum 0. 
-/B5/generator/sigmaAngle 0.
+/B5/generator/sigmaAngle 0.5/detector/armAngle 30. deg
+/B5/field/value 1. tesla
 /B5/generator/sigmaAngle 2. deg
 /run/beamOn 3
 
